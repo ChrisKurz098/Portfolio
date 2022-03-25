@@ -1,7 +1,9 @@
 :root{
     --primary-color: rgba(92, 81, 66, 0.507);
-    --secondary-color: rgba(211, 203, 197, 0.80);
+    --secondary-color: rgb(187, 163, 145);
+    --transparent-color: rgba(230, 186, 152, 0.582);
     --hover-color: rgb(211, 203, 197);
+    --select-color: rgb(235, 199, 172);
 }
 * {
     margin: 0;
@@ -89,15 +91,21 @@ header nav button{
     display: inline-block; /*set from flex child to block so margins can be set for spacing*/
     color: rgb(48, 48, 48);
     margin-top: 3vh;
-    height: 10vh;
+    height: 9vh;
     text-decoration: none;
-    background-color: var(--secondary-color);
+    background-color: var(--transparent-color);
     border-radius: 20px;
-    animation: inFromLeft 2s;
+    transition: .5s;
 }
 
 header nav button:hover{
+    transform: scale(1.05);
     background-color: var(--hover-color);
+}
+
+.nav-selected {
+    transform: scale(1.05);
+    background-color: var(--select-color);
 }
 
 header nav img{
@@ -107,6 +115,18 @@ header nav img{
     max-width: 13vw;
     animation: inFromLeft 2s;
 }
+
+#myLinks img{
+    margin: 3px;
+    margin-top: 8vh;
+    width: 25%;
+    transition: .5s;
+}
+#myLinks img:hover{
+
+    width: 35%;
+}
+
 
 /* END HEADER/NAV */
 
@@ -323,4 +343,46 @@ header nav img{
         transform: translate(-200px,0px);
         
     }
+}
+
+@keyframes growIn{
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    
+}
+
+/*Preset animation times*/
+
+.fadeIn-1{
+    animation: growIn .75s;
+}
+.fadeIn-2{
+    animation: growIn 1s;
+}
+.fadeIn-3{
+    animation: growIn 1.25s;
+}
+.fadeIn-3{
+    animation: growIn 1.50s;
+}
+
+
+
+.inFromLeft-1 {
+    animation: inFromLeft .75s;
+}
+.inFromLeft-2 {
+    animation: inFromLeft 1s;
+}
+.inFromLeft-3 {
+    animation: inFromLeft 1.25s;
+}
+.inFromLeft-4 {
+    animation: inFromLeft 1.5s;
 }

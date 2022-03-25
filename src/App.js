@@ -1,18 +1,34 @@
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './assets/css/style.css';
 import Header from "./components/Header";
 import About from "./components/About";
+import Works from "./components/Works";
+import Contact from "./components/Contact";
+
 function App() {
-  const [view, setView] = useState(<About/>);
-  console.log(view);
+  const [view, setView] = useState("About");
+
+  function renderView(currentView) {
+    switch (currentView) {
+      case "About":
+        return (<About />)
+      case 'Work':
+        return (<Works />)
+      case 'Contact':
+        return (<Contact />)
+      case 'Resume':
+        return (<About />)
+      default:
+        break;
+    }
+  }
+
   return (
     <div>
-     <Header
-     setView={setView}
-     />
+      <Header view={view} setView={setView}/>
 
-   {view}
+      {renderView(view)}
 
     </div>
   )

@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from "../Nav";
 import portImg from "../../assets/images/profile-pic.jpg"
 
-const Header = ({setView}) => {
+const Header = ({view, setView}) => {
    
     return (
        <header>
@@ -15,10 +15,10 @@ const Header = ({setView}) => {
                 Full Stack Web Development
             </h2>
         </div>
-        <Nav
-             setView={setView}
-        />
+        <Nav view={view} setView={setView} />
+      
        </header>
+      
     )
 }
 
