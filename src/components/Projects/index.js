@@ -23,7 +23,7 @@ function Projects() {
                 liveLink: data.homepage
             });
 
-            setProjectData([...projectArray, ...projectData, ]);
+            setProjectData([...projectArray]);
         });
         console.log('----done----')
         
