@@ -1,0 +1,326 @@
+:root{
+    --primary-color: rgba(92, 81, 66, 0.507);
+    --secondary-color: rgba(211, 203, 197, 0.80);
+    --hover-color: rgb(211, 203, 197);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    padding: 0 100px 0 100px;
+    font-size: 30px;
+}
+html{
+    scroll-behavior: smooth; /*makes all scrolling smooth*/
+}
+
+body {
+    
+    font-family: 'Lucida Sans', Arial, sans-serif;
+}
+
+#profile-pic-title{ /*this element is to only be seen on smaller screen sizes*/
+    visibility: hidden;
+    height:0px;
+    animation: fadeIn 1s
+}
+
+#title {
+    margin-top: 0;
+    flex: 0 100%;
+    display: block;
+    text-align: center;
+    animation: inFromTop 1s;
+}
+#title h1{
+    margin-top: -10px;
+    color:var(--secondary-color);
+    text-decoration: underline;
+    font-size:400%;
+}    
+
+#title h2{
+    color:var(--secondary-color);
+    font-size: 3vh;
+}    
+
+header {
+    overflow: hidden;
+    display: flex;
+    margin-left:13vw;
+    height: 25vh;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-image: url("../images/blurry-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    border-bottom: 0.2vw solid var(--primary-color);
+
+}
+
+/*by setting margins reletive to the viewport, the items will saty stationary on screen*/
+header nav {
+
+    display:inline-flex;
+    flex-direction: column;
+    order:1;
+    text-align: center;
+    font-size: 2vw;
+    position: fixed;
+    width: 13vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* background-image: linear-gradient( rgb(247, 228, 204), rgb(87, 73, 51)); */
+    background-image: url("../images/blurry-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    
+    z-index: 9999;
+  
+}
+
+header nav button{
+    margin: 5px;
+    font-size: large;
+    display: inline-block; /*set from flex child to block so margins can be set for spacing*/
+    color: rgb(48, 48, 48);
+    margin-top: 3vh;
+    height: 10vh;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    animation: inFromLeft 2s;
+}
+
+header nav button:hover{
+    background-color: var(--hover-color);
+}
+
+header nav img{
+    margin-top: 1vh;
+    border-radius: 45%;
+    max-height: 13vw ;
+    max-width: 13vw;
+    animation: inFromLeft 2s;
+}
+
+/* END HEADER/NAV */
+
+/*BEGIN ABOUT ME SECTION*/
+#about{
+    height: 75vh;
+    background-color:snow;
+    padding-bottom: 20px;
+    border: 0.2vw solid var(--primary-color);
+    text-align: center;
+    margin-left:13vw;
+    animation: fadeIn 2s;
+}
+#about h2{
+    color:var(--primary-color);
+    font-size: 40px; /*this should be 30 but for somew reason it doesnt stay the right size*/
+}
+
+/*BEGIN WORKS SECTION*/
+#work {
+    height: 75vh;
+    color:var(--primary-color);
+    background-color:snow;
+    font-size: 30px;
+    border: 0.2vw solid var(--primary-color);
+    text-align: center;
+    margin-left:13vw;
+    animation: fadeIn 2s;
+}
+
+/*children*/
+
+#works{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#works a{
+    text-decoration: none;
+    text-align: left;
+}
+
+
+                            
+/*BEGIN FOOTER SECTION*/
+#contact {
+    height: 75vh;
+    color:var(--primary-color);
+    background-color:snow;
+    list-style: none;
+    font-size: 30px;
+    border: 0.2vw solid var(--primary-color);
+    text-align: center;
+    margin-left:13vw;
+    animation: fadeIn 2s;
+}
+#contact h2{
+
+    border-bottom: 8px solid var(--secondary-color);
+}
+
+
+
+
+ /* ----------Media Queries SMALL DESKTOP screens 980px breakpoint---------- */
+ @media screen and (max-width: 980px)
+ {
+     header, #about, #work, #contact {
+         margin-left: 0px;
+     }
+
+     #about, #work, #contact {
+         
+        scroll-margin-top: 45px;
+    }
+    #about h2, #work h2, #contact h2 {
+         
+        font-size: 28px;
+    }
+
+     #title{
+        margin-top: 10vh;
+     }
+
+     #profile-pic{
+        order:5;
+        visibility: hidden;
+    }
+
+    #profile-pic-title{
+        padding-top: 1px;
+        visibility: visible;
+        border-radius: 50%;
+        height:20vh;
+    }
+    
+    header nav {
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100vw;
+        height: 45px;
+    }
+
+    header nav a{
+        flex:1 25%;
+        height: 5vh;
+        width: 21vw;
+        margin-top:5px;
+        font-size: 3vh;
+        margin-left: auto;
+        margin-bottom: auto;
+    }
+
+    #works a{
+        font-size: 20px;
+    }
+    footer h2{
+    margin-bottom: 10px;
+    }
+    footer ul{
+        font-size: 20px;
+        
+    }
+
+
+ }
+
+ /* -----Media Queries TABLET screens----- */
+
+@media screen and (max-width: 768px) {
+    header nav{
+        height:60px;
+    }
+    header nav a{
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        font-size: 30px;
+ 
+    }
+
+}
+
+/* -----Media Queries PHONE screens----- */
+@media screen and (max-width: 575px){
+    
+    header nav{
+        height:83px;
+    }
+    header nav a{
+
+       height: 35px;
+       font-size: 24px;
+ 
+    }
+    #about, #work, #contact {
+        scroll-margin-top: 83px;
+    }
+    #title{
+        margin-top: 13vh;
+     }
+
+    #title h1{
+        font-size: 35px;
+    }
+
+    #title h2{
+        font-size: 20px;
+    }
+
+    header nav a{
+        flex:1 50%;
+ 
+ 
+    }
+    #morcal{
+        height: 200px;
+    }
+    #runbuddy, #breakout{
+
+        height: 150px;
+    }
+}
+
+/*ANIMATION SECTION*/
+@keyframes fadeIn {
+    from{
+        
+        opacity: 0;
+    }
+}
+@keyframes flyIn {
+    from{
+        
+        transform: scale(5) translate(75vw,75vh);
+        opacity:0;
+        filter:blur(10px)
+    }
+}
+
+@keyframes inFromTop {
+    from{
+        opacity:0;
+        transform: translate(0px,-200px);
+        
+    }
+}
+
+@keyframes inFromLeft {
+    from{
+        opacity:0;
+        transform: translate(-200px,0px);
+        
+    }
+}
