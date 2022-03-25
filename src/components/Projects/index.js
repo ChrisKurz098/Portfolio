@@ -20,7 +20,7 @@ function Projects() {
             await projectArray.push( {
                 name: data.name,
                 description: data.description,
-                gitLink: data.git_url,
+                gitLink: data.svn_url,
                 liveLink: data.homepage,
                 index: index
             });
@@ -34,11 +34,11 @@ function Projects() {
 
     return (
         <div className="project-card-container">
-            {!projectData && <p>Gathering Projects...</p>}
+            {projectData===[] && <p>Gathering Projects...</p>}
             {projectData.map((data) => (
                 <div key={data.index} className="project-card" style={{ animationDuration: `${data.index/2}s`}}>
                     <h4>{data.name}</h4>
-                    <a href={data.gitLink}>
+                    <a href={data.gitLink} target='__blank'>
                    <img src={require('../../assets/images/gitIcon.png')} alt="GitHub Link"/>
                    </a>
                    <br/>
