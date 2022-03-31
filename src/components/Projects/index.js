@@ -34,14 +34,14 @@ function Projects() {
     function clickHandler(event){
         const card = event.target;
         card.scrollIntoView({block: "center"});
-        setSelected(card.id);
+        (card.className.includes("selected-card")) ?  setSelected("") : setSelected(card.id);
     }
 
 
 
     return (
         <div className="project-card-container" onClick={clickHandler}>
-        <p     style={{ "display": projectData.length ? "none" : "block" }} >Gathering Projects...</p>
+        <p className="loading-message"  style={{ "display": projectData.length ? "none" : "block" }} >Gathering Projects...</p>
 
             {projectData.map((data) => (
                 <div key={data.index} id={data.name} className={`project-card ${selected==data.name && "selected-card"}`}  style={{

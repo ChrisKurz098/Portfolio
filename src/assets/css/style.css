@@ -152,10 +152,11 @@ header nav img{
     margin: 3px;
     margin-top: 8vh;
     width: 25%;
+    transform: scale(.9);
     transition: .5s;
 }
 #myLinks img:hover{
-    width: 35%;
+   transform: scale(1.2);
 }
 
 
@@ -199,11 +200,13 @@ header nav img{
 }
 
 /*children*/
+.loading-message {
+    animation: fadeIn .5s infinite alternate-reverse;
+}
 
 #works{
     display: flex;
     flex-wrap: wrap;
-
 }
 #works:hover{
 
@@ -499,6 +502,15 @@ margin-top: 5%;
         transform: scale(1.2);
     }
     
+}
+
+@keyframes bounce {
+    from {
+        transform: scale(.8);
+    }
+    to {
+        transform: scale(1.9);
+    }
 }
 
 /*Preset animation times*/
