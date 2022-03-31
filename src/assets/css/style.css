@@ -1,10 +1,15 @@
 :root{
-    --primary-color: rgba(92, 81, 66, 0.507);
+    --primary-color: rgb(92, 81, 66);
     --text-color: rgb(46, 42, 36);
     --secondary-color: rgb(187, 163, 145);
     --transparent-color: rgba(230, 186, 152, 0.582);
-    --hover-color: rgb(211, 203, 197);
-    --select-color: rgb(235, 199, 172);
+    --select-color: rgb(245, 217, 196); 
+
+}
+
+@font-face {
+    font-family: SairaCondensed;
+    src: url(../fonts/SairaCondensed-Regular.ttf);
 }
 * {
     margin: 0;
@@ -18,36 +23,41 @@ p {
 }
 html{
     scroll-behavior: smooth; /*makes all scrolling smooth*/
+   overflow: scroll;
+   background: hsla(36, 12%, 16%, 1);
+   background: linear-gradient(180deg, rgb(56, 51, 43) 0%, hsla(24, 8%, 48%, 1) 50%, hsla(27, 19%, 62%, 1) 100%);
+   
+
 }
 
 body {
     
-    font-family: 'Lucida Sans', Arial, sans-serif;
+    font-family:SairaCondensed;
 }
 
 #profile-pic-title{ /*this element is to only be seen on smaller screen sizes*/
     visibility: hidden;
     height:0px;
-    animation: fadeIn 1s
+    animation: fadeIn 1s;
 }
 
 #title {
-    margin-top: 0;
+    margin-top: 0px;
     flex: 0 100%;
     display: block;
     text-align: center;
     animation: inFromTop 1s;
 }
 #title h1{
-    margin-top: -10px;
+    margin-top: -3%;
     color:var(--secondary-color);
     text-decoration: underline;
-    font-size:400%;
+    font-size:10vh;
 }    
 
 #title h2{
     color:var(--secondary-color);
-    font-size: 3vh;
+    font-size: 5vh;
 }    
 
 header {
@@ -57,29 +67,32 @@ header {
     height: 25vh;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-image: url("../images/blurry-bg.jpg");
-    background-size: cover;
+    /* background-image: url("../images/blurry-bg.jpg"); -------BK IMAGE*/
+    background-size: 100%;
     background-attachment: fixed;
     border-bottom: 0.2vw solid var(--primary-color);
+    font-size: xx-large;
 
 }
 
-/*by setting margins reletive to the viewport, the items will saty stationary on screen*/
-header nav {
 
+/*by setting margins reletive to the viewport, the items will saty stationary on screen*/
+nav {
+    padding-top: 25vh;
+}
+header nav {
     display:inline-flex;
     flex-direction: column;
     order:1;
     text-align: center;
-    font-size: 2vw;
     position: fixed;
     width: 13vw;
     height: 100%;
     top: 0;
     left: 0;
     /* background-image: linear-gradient( rgb(247, 228, 204), rgb(87, 73, 51)); */
-    background-image: url("../images/blurry-bg.jpg");
-    background-size: cover;
+    /* background-image: url("../images/blurry-bg.jpg"); -------BK IMAGE */
+    background-size: 100%;
     background-attachment: fixed;
     
     z-index: 9999;
@@ -87,27 +100,45 @@ header nav {
 }
 
 header nav button{
-    margin: 5px;
-    font-size: large;
+    padding-left: 10%;
+    text-align: center;
+    margin-left: 1.28%;
+    font-size: 110%;
+    font-family:SairaCondensed;
     display: inline-block; /*set from flex child to block so margins can be set for spacing*/
     color: rgb(48, 48, 48);
     margin-top: 3vh;
-    height: 9vh;
+    height: 20%;
+    width: 13vw;
     text-decoration: none;
     background-color: var(--transparent-color);
-    border-radius: 20px;
+    border-radius: 90px 0px 0px 90px;
+    border-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
     transition: .5s;
+    box-shadow: -5px 10px 5px;
 }
 
 header nav button:hover{
-    transform: scale(1.05);
-    background-color: var(--hover-color);
+    width: 13vw;
+    background-color: rgb(207, 195, 195);
 }
 
 .nav-selected {
-    transform: scale(1.05);
-    background-color: var(--select-color);
+    margin-left: 1.6%;
+    padding-left: 25%;
+   border-right: 0px;;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: snow;
+    box-shadow: -5px 18px 5px;
+  
 }
+.nav-selected:hover{
+    background-color: snow;
+}
+
 
 header nav img{
     margin-top: 1vh;
@@ -124,37 +155,46 @@ header nav img{
     transition: .5s;
 }
 #myLinks img:hover{
-
     width: 35%;
 }
 
 
 /* END HEADER/NAV */
 
+
 /*BEGIN ABOUT ME SECTION*/
 #about{
     height: 75vh;
+    font-size: 30px;
     background-color:snow;
     padding-bottom: 20px;
     border: 0.2vw solid var(--primary-color);
     text-align: center;
     margin-left:13vw;
-    animation: fadeIn 2s;
+   
 }
 #about h2{
+    animation: fadeIn 2s;
     color:var(--primary-color);
-    font-size: 40px; /*this should be 30 but for somew reason it doesnt stay the right size*/
+    font-size: 200%;
 }
 
 /*BEGIN WORKS SECTION*/
 #work {
-    height: 100%;
+    height: 100vh;
     color:var(--primary-color);
     background-color:snow;
     font-size: 30px;
     border: 0.2vw solid var(--primary-color);
     text-align: center;
     margin-left:13vw;
+}
+
+#work h2 {
+    font-size: 200%;
+    margin-bottom: 2%;
+    height: auto;
+
     animation: fadeIn 2s;
 }
 
@@ -165,13 +205,17 @@ header nav img{
     flex-wrap: wrap;
 
 }
+#works:hover{
+
+    display: flex;
+    flex-wrap: wrap;
+
+}
 
 #works a{
     text-decoration: none;
     text-align: left;
 }
-
-
 
 .project-card-container{
     padding-left: 10vw;
@@ -184,36 +228,74 @@ flex-flow: row wrap;
 }
 
 .project-card {
-    max-width: 28%;
-    
+    min-width: 28%;
+    background-color: aliceblue;
+    /* background-image: url("../../assets/images/CRTImage.jpg"); */
+    background-position:center;
     display: flex;
     flex-direction: column;
-    background-color: aliceblue;
     margin: 10px;
     padding: 10px;
     width: 20vw;
     height: 35vh;
     border: 3px solid var(--primary-color) ;
-    border-radius: 25px;
+    border-radius: 150px;
     font-size:1.5vw;
     box-shadow: inset;
     animation-name: inFromBelow;
+    transform: scale(1);
+
+    transition:  .5s;
+    
     
 }
-
-.project-card p{
-
-    color: var(--text-color);
-    padding: 0px 10px 0px 10px;
-    font-size: small;
+.project-card:hover {
+    position: static;
+    z-index: 10;
+ 
+    transform: scale(1.05);
+    box-shadow: -5px 10px 5px rgba(0, 0, 0, 0.5);
 }
+.selected-card {
+    position: static;
+    z-index: 11;
+ height: 40vh;
+    transform: scale(1.5);
+    box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.selected-card:hover {
+    position: static;
+    z-index: 11;
+
+    transform: scale(1.5);
+    box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.project-card h4{
+    pointer-events: none;
+margin-top: 5%;
+font-size: xx-large;
+}
+.project-card p{
+    pointer-events: none;
+margin-top: 5%;
+    color: var(--text-color);
+    padding: 00px 10px 0px 10px;
+    font-size: x-large;
+}
+
 .project-card img{
+ 
     margin-top: 1vh;
-    width:10%;
+    margin-bottom: 0px;
+    width:15%;
 }
 
 .project-card .liveLink{
     text-decoration: none;
+}
+.liveLinkDiv  {
     margin-top: auto; 
 }
 
@@ -229,10 +311,11 @@ flex-flow: row wrap;
     border: 0.2vw solid var(--primary-color);
     text-align: center;
     margin-left:13vw;
-    animation: fadeIn 2s;
+   
 }
 #contact h2{
-
+    font-size: 200%;
+    animation: fadeIn 2s;
     border-bottom: 8px solid var(--secondary-color);
 }
 
@@ -367,6 +450,12 @@ flex-flow: row wrap;
         opacity: 0;
     }
 }
+@keyframes growHor {
+    from{
+        
+    transform: scaleX(0);
+    }
+}
 @keyframes flyIn {
     from{
         
@@ -414,19 +503,51 @@ flex-flow: row wrap;
 
 /*Preset animation times*/
 
-.fadeIn-1{
+.growIn-1{
     animation: growIn .75s;
 }
-.fadeIn-2{
+.growIn-2{
     animation: growIn 1s;
 }
-.fadeIn-3{
+.growIn-3{
     animation: growIn 1.25s;
 }
-.fadeIn-3{
+.growIn-3{
     animation: growIn 1.50s;
 }
 
+.growHor-1{
+    animation: growHor .75s;
+}
+.growHor-2{
+    animation: growHor 1s;
+}
+.growHor-3{
+    animation: growHor 1.25s;
+}
+.growHor-3{
+    animation: growHor 1.50s;
+}
+.growHor-4{
+    animation: growHor 1.75s;
+}
+
+ 
+.fadeIn-1{
+    animation: fadeIn 1s;
+}
+.fadeIn-2{
+    animation: fadeIn 1.25s;
+}
+.fadeIn-3{
+    animation: fadeIn 1.50s;
+}
+.fadeIn-4{
+    animation: fadeIn 1.75s;
+}
+.fadeIn-1{
+    animation: fadeIn 2s;
+}
 
 
 .inFromLeft-1 {

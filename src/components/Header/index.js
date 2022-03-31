@@ -15,6 +15,7 @@ const Header = ({view, setView}) => {
                 Full Stack Web Development
             </h2>
         </div>
+        
         <Nav view={view} setView={setView} />
       
        </header>

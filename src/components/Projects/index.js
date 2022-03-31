@@ -2,22 +2,23 @@ import React, { useState, useEffect } from "react";
 
 
 function Projects() {
-    const projects = ['Plantzzz', 'TubeSim', 'EMPL-Tracker', 'Spelling-Bee','Weather-Dashborard'];
+    const projects = ['Plantzzz', 'TubeSim', 'EMPL-Tracker', 'Spelling-Bee', 'Weather-Dashborard'];
     const [projectData, setProjectData] = useState([]);
+
+    const [selected, setSelected] = useState("");
 
     useEffect(() => {
         getProjects();
-        
+
     }, []);
 
     async function getProjects() {
         const projectArray = [];
         let index = 1;
-        for(const project of projects) {
+        for (const project of projects) {
             const response = await fetch(`https://api.github.com/repos/chriskurz098/${project}`);
             const data = await response.json();
-            console.log('DATA: ', data)
-            await projectArray.push( {
+            await projectArray.push({
                 name: data.name,
                 description: data.description,
                 gitLink: data.svn_url,
@@ -25,26 +26,37 @@ function Projects() {
                 index: index
             });
             index++
-           
+
         };
         setProjectData(projectArray);
     }
 
-    console.log('ProjectData: ', projectData)
+    function clickHandler(event){
+        const card = event.target;
+        card.scrollIntoView({block: "center"});
+        setSelected(card.id);
+    }
+
+
 
     return (
-        <div className="project-card-container">
-            {projectData===[] && <p>Gathering Projects...</p>}
+        <div className="project-card-container" onClick={clickHandler}>
+        <p     style={{ "display": projectData.length ? "none" : "block" }} >Gathering Projects...</p>
+
             {projectData.map((data) => (
-                <div key={data.index} className="project-card" style={{ animationDuration: `${data.index/2}s`}}>
+                <div key={data.index} id={data.name} className={`project-card ${selected==data.name && "selected-card"}`}  style={{
+                    animationDuration: `${data.index / 2}s`
+                }}>
                     <h4>{data.name}</h4>
-                    <a href={data.gitLink} target='__blank'>
-                   <img src={require('../../assets/images/gitIcon.png')} alt="GitHub Link"/>
-                   </a>
-                   <br/>
-                   <p>{data.description}</p>
-                  
-                     {data.liveLink && <a className='liveLink' href={data.liveLink} target='__blank'>Live Link</a>}
+                    <div>
+                        <a href={data.gitLink} target='__blank'>
+                            <img src={require('../../assets/images/gitIcon.png')} alt="GitHub Link" />
+                        </a>
+                    </div>
+                    <p>{data.description}</p>
+                    <div className="liveLinkDiv">
+                    {data.liveLink && <a className='liveLink' href={data.liveLink} target='__blank'>Live Link</a>}
+                    </div>
                 </div>
             ))}
         </div>
