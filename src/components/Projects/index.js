@@ -7,10 +7,7 @@ function Projects() {
 
     const [selected, setSelected] = useState("");
 
-    useEffect(() => {
-        getProjects();
-
-    }, []);
+    useEffect(() => { getProjects() }, []);
 
     async function getProjects() {
         const projectArray = [];
@@ -23,39 +20,51 @@ function Projects() {
                 description: data.description,
                 gitLink: data.svn_url,
                 liveLink: data.homepage,
-                index: index
+                index: index,
+                topics: data.topics
             });
             index++
 
         };
         setProjectData(projectArray);
-    }
+    };
 
-    function clickHandler(event){
+
+    function clickHandler(event) {
         const card = event.target;
-        card.scrollIntoView({block: "center"});
-        (card.className.includes("selected-card")) ?  setSelected("") : setSelected(card.id);
+        card.scrollIntoView({ block: "center" });
+        (card.className.includes("selected-card")) ? setSelected("") : setSelected(card.id);
     }
 
 
 
     return (
         <div className="project-card-container" onClick={clickHandler}>
-        <p className="loading-message"  style={{ "display": projectData.length ? "none" : "block" }} >Gathering Projects...</p>
+            <p className="loading-message" style={{ "display": projectData.length ? "none" : "block" }} >Gathering Projects...</p>
 
             {projectData.map((data) => (
-                <div key={data.index} id={data.name} className={`project-card ${selected==data.name && "selected-card"}`}  style={{
+                <div key={data.index} id={data.name} className={`project-card ${selected === data.name && "selected-card"}`} style={{
                     animationDuration: `${data.index / 2}s`
                 }}>
                     <h4>{data.name}</h4>
-                    <div>
+                    <div className="img-container">
                         <a href={data.gitLink} target='__blank'>
                             <img src={require('../../assets/images/gitIcon.png')} alt="GitHub Link" />
                         </a>
                     </div>
                     <p>{data.description}</p>
-                    <div className="liveLinkDiv">
-                    {data.liveLink && <a className='liveLink' href={data.liveLink} target='__blank'>Live Link</a>}
+                    <p style={{ "display": selected === data.name ? "none" : "block", "margin": "0","fontSize": "16px"}}>Click for more...</p>
+                    <p style={{ "display": selected === data.name ? "block" : "none" }} className="tech-title">
+                        Technologies:
+                        <ul className="columns-list">
+                        {data.topics.map((topic) => (
+                                <li key={topic}> {topic} </li>
+                        ))}
+                        </ul>
+                    </p>
+                 
+                    <div className={`liveLinkDiv  ${selected === data.name && "reset"} `} >
+                        {data.liveLink && <a className='liveLink' href={data.liveLink} target='__blank'>Live Link</a>}
                     </div>
                 </div>
             ))}

@@ -240,7 +240,7 @@ flex-flow: row wrap;
     margin: 10px;
     padding: 10px;
     width: 20vw;
-    height: 35vh;
+    height: 30vh;
     border: 3px solid var(--primary-color) ;
     border-radius: 150px;
     font-size:1.5vw;
@@ -262,7 +262,7 @@ flex-flow: row wrap;
 .selected-card {
     position: static;
     z-index: 11;
- height: 40vh;
+ height: 45vh;
     transform: scale(1.5);
     box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
 }
@@ -274,7 +274,6 @@ flex-flow: row wrap;
     box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
-
 .project-card h4{
     pointer-events: none;
 margin-top: 5%;
@@ -282,7 +281,7 @@ font-size: xx-large;
 }
 .project-card p{
     pointer-events: none;
-margin-top: 5%;
+    margin-top: 5%;
     color: var(--text-color);
     padding: 00px 10px 0px 10px;
     font-size: x-large;
@@ -294,11 +293,31 @@ margin-top: 5%;
     margin-bottom: 0px;
     width:15%;
 }
+.tech-title{
+    animation: fadeIn 1.5s;
+    font-size: x-larger;
+    font-weight: bold;
+    
+
+}
+.columns-list{
+    columns: 2;
+    font-weight:normal;
+    
+    list-style-type: none;
+    animation: fadeIn 2s;
+}
 
 .project-card .liveLink{
     text-decoration: none;
 }
 .liveLinkDiv  {
+    
+    margin-top: auto; 
+}
+/* This simply sets an animation to hide a weird transition when a card get larger when selected.  */
+ .reset  {
+    animation: fadeIn 3s ;
     margin-top: auto; 
 }
 
@@ -458,6 +477,13 @@ margin-top: 5%;
         
     transform: scaleX(0);
     }
+}
+
+@keyframes growVert {
+    from{
+        
+        transform: scaleY(0);
+        }
 }
 @keyframes flyIn {
     from{
