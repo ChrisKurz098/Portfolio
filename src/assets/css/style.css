@@ -294,15 +294,10 @@ font-size: xx-large;
     font-size: large;
 }
 
-.git-link{
+ .git-link{
     margin-top: 0px;
     margin-bottom: 0px;
-    width:15%;
-  
-}
-
- .git-link{
-    width:15%;
+    width:13%;
     transition: .5s;
 }
 .selected-card .git-link{
