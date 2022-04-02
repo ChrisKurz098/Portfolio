@@ -1,7 +1,7 @@
 :root{
     --primary-color: rgb(92, 81, 66);
     --text-color: rgb(46, 42, 36);
-    --secondary-color: rgb(117, 129, 158);
+    --secondary-color: rgb(19, 38, 84);
     --transparent-color: rgba(211, 203, 203, 0.582);
     --select-color: rgb(245, 217, 196); 
 
@@ -28,7 +28,7 @@ html{
     scroll-behavior: smooth; /*makes all scrolling smooth*/
    overflow: scroll;
    background: hsla(36, 12%, 16%, 1);
-   background: linear-gradient(180deg, rgb(43, 52, 56) 0%, hsla(24, 8%, 48%, 1) 50%, hsla(27, 19%, 62%, 1) 100%);
+   background: linear-gradient(180deg, rgb(112, 123, 142) 0%, rgb(113, 118, 132) 50%, rgb(128, 172, 204) 100%);
    background-attachment: fixed;
 
 }
