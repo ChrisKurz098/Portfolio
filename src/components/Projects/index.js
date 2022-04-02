@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 
 
 function Projects() {
-    const projects = ['Plantzzz', 'TubeSim', 'EMPL-Tracker', 'Spelling-Bee', 'Weather-Dashborard'];
+    const projects = ['Plantzzz', 'TubeSim', 'EMPL-Tracker', 'Spelling-Bee', 'Weather-Dashborard', 'IMG2ASCII'];
     const [projectData, setProjectData] = useState([]);
 
     const [selected, setSelected] = useState("");
 
-    useEffect(() => { getProjects() }, []);
+    useEffect(() => { getProjects() }, 
+    //eslint-disable-next-line
+    []);
 
     async function getProjects() {
         const projectArray = [];
@@ -47,22 +49,26 @@ function Projects() {
                     animationDuration: `${data.index / 2}s`
                 }}>
                     <h4>{data.name}</h4>
+
                     <div className="img-container">
                         <a href={data.gitLink} target='__blank'>
-                            <img src={require('../../assets/images/gitIcon.png')} alt="GitHub Link" />
+                            <img className="git-link"  src={require('../../assets/images/gitIcon.png')} alt="GitHub Link" />
                         </a>
                     </div>
+
+                    <img className="screenshot" style={{ "display": selected === data.name ? "block" : "none" }} src={require(`../../assets/images/${data.name}.jpg`)} alt={`Screenshot of ${data.name}`}/>
                     <p>{data.description}</p>
                     <p style={{ "display": selected === data.name ? "none" : "block", "margin": "0","fontSize": "16px"}}>Click for more...</p>
-                    <p style={{ "display": selected === data.name ? "block" : "none" }} className="tech-title">
-                        Technologies:
-                        <ul className="columns-list">
+        
+                    <p  className="tech-title" style={{ "display": selected === data.name ? "block" : "none" }}>  
+                    Technologies:
+                    <ul className="columns-list">
                         {data.topics.map((topic) => (
                                 <li key={topic}> {topic} </li>
                         ))}
                         </ul>
-                    </p>
-                 
+                    </p> 
+                
                     <div className={`liveLinkDiv  ${selected === data.name && "reset"} `} >
                         {data.liveLink && <a className='liveLink' href={data.liveLink} target='__blank'>Live Link</a>}
                     </div>

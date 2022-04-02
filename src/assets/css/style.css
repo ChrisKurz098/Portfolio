@@ -1,11 +1,17 @@
 :root{
     --primary-color: rgb(92, 81, 66);
     --text-color: rgb(46, 42, 36);
-    --secondary-color: rgb(187, 163, 145);
-    --transparent-color: rgba(230, 186, 152, 0.582);
+    --secondary-color: rgb(117, 129, 158);
+    --transparent-color: rgba(211, 203, 203, 0.582);
     --select-color: rgb(245, 217, 196); 
 
 }
+
+/* --primary-color: rgb(92, 81, 66);
+--text-color: rgb(46, 42, 36);
+--secondary-color: rgb(187, 163, 145);
+--transparent-color: rgba(230, 186, 152, 0.582);
+--select-color: rgb(245, 217, 196);  */
 
 @font-face {
     font-family: SairaCondensed;
@@ -17,16 +23,13 @@
     box-sizing: border-box;
 }
 
-p {
-    padding: 0 100px 0 100px;
-    font-size: 25px;
-}
+
 html{
     scroll-behavior: smooth; /*makes all scrolling smooth*/
    overflow: scroll;
    background: hsla(36, 12%, 16%, 1);
-   background: linear-gradient(180deg, rgb(56, 51, 43) 0%, hsla(24, 8%, 48%, 1) 50%, hsla(27, 19%, 62%, 1) 100%);
-   
+   background: linear-gradient(180deg, rgb(43, 52, 56) 0%, hsla(24, 8%, 48%, 1) 50%, hsla(27, 19%, 62%, 1) 100%);
+   background-attachment: fixed;
 
 }
 
@@ -222,7 +225,6 @@ header nav img{
 
 .project-card-container{
     padding-left: 10vw;
-    
     width: 75vw;
 display:flex;
 justify-content:center;
@@ -231,7 +233,8 @@ flex-flow: row wrap;
 }
 
 .project-card {
-    min-width: 28%;
+
+    min-width: 30%;
     background-color: aliceblue;
     /* background-image: url("../../assets/images/CRTImage.jpg"); */
     background-position:center;
@@ -247,7 +250,6 @@ flex-flow: row wrap;
     box-shadow: inset;
     animation-name: inFromBelow;
     transform: scale(1);
-
     transition:  .5s;
     
     
@@ -263,6 +265,7 @@ flex-flow: row wrap;
     position: static;
     z-index: 11;
  height: 45vh;
+
     transform: scale(1.5);
     box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
 }
@@ -281,32 +284,67 @@ font-size: xx-large;
 }
 .project-card p{
     pointer-events: none;
-    margin-top: 5%;
+    margin-top: 1%;
     color: var(--text-color);
     padding: 00px 10px 0px 10px;
+    
     font-size: x-large;
 }
+.selected-card p {
+    font-size: large;
+}
 
-.project-card img{
- 
-    margin-top: 1vh;
+.git-link{
+    margin-top: 0px;
     margin-bottom: 0px;
     width:15%;
+  
+}
+
+ .git-link{
+    width:15%;
+    transition: .5s;
+}
+.selected-card .git-link{
+    width:10%;
+}
+.img-container {
+    height: 15%;
+   
+}
+.selected-card .img-container {
+    height: 10%;
+
+}
+
+.screenshot {
+    animation: fadeIn 1s;
+    border: 1px solid black;
+    border-radius: 25px;
+    align-self: center;
+    max-width: 100%;
+    max-height: 30%;
+    }
+
+.more-info {
+  
+    height: 70%;
 }
 .tech-title{
+  padding-top: 1px;
+    flex: 1;
     animation: fadeIn 1.5s;
-    font-size: x-larger;
     font-weight: bold;
-    
 
 }
 .columns-list{
     columns: 2;
+    font-size: large;
     font-weight:normal;
-    
     list-style-type: none;
     animation: fadeIn 2s;
 }
+
 
 .project-card .liveLink{
     text-decoration: none;
