@@ -6,9 +6,9 @@ This portfolio was created using React. It is a Single Page Application that dyn
 ![image](https://user-images.githubusercontent.com/90714216/161463027-b846aa0b-b72a-42f3-9efd-149704883365.png)
 
 ## Usage:
-Just follow this [link](https://chriskurz098.github.io/portfolio/) to check it out for yourself!
+### Just follow this [link](https://chriskurz098.github.io/portfolio/) to check it out for yourself!
  
-##Installation:
+##  Installation:
 If you want to check out the code, just download or clone this repository and:
 Use npm install to install needed packages
 Run npm start and wait for the page to automatically open
