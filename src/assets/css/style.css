@@ -1,17 +1,16 @@
 :root{
-    --primary-color: rgb(92, 81, 66);
-    --text-color: rgb(46, 42, 36);
-    --secondary-color: rgb(19, 38, 84);
-    --transparent-color: rgba(211, 203, 203, 0.582);
-    --select-color: rgb(245, 217, 196); 
+    --primary-color: rgb(93, 87, 155);
+    --text-color: rgb(58, 59, 74);
+    --secondary-color: rgb(181, 198, 237);
+    --transparent-color: rgba(193, 202, 216, 0.582);
+    --select-color: rgb(240, 224, 211); 
+    --background-color: snow;
+    --background-gradientA: linear-gradient(180deg, var(--text-color) 50%, var(--text-color) 100%);
+    --background-gradientB: linear-gradient(100deg, var(--background-color) 50%, white 100%);
+
 
 }
 
-/* --primary-color: rgb(92, 81, 66);
---text-color: rgb(46, 42, 36);
---secondary-color: rgb(187, 163, 145);
---transparent-color: rgba(230, 186, 152, 0.582);
---select-color: rgb(245, 217, 196);  */
 
 @font-face {
     font-family: SairaCondensed;
@@ -26,15 +25,20 @@
 
 html{
     scroll-behavior: smooth; /*makes all scrolling smooth*/
+    
    overflow: scroll;
+   overflow-x: hidden;
    background: hsla(36, 12%, 16%, 1);
-   background: linear-gradient(180deg, rgb(112, 123, 142) 0%, rgb(113, 118, 132) 50%, rgb(128, 172, 204) 100%);
+
+   /* background-image: url('../../assets/images/bk.jpg'); */
+   background: var(--background-gradientA);
    background-attachment: fixed;
 
 }
 
 body {
-    
+
+
     font-family:SairaCondensed;
 }
 
@@ -45,6 +49,7 @@ body {
 }
 
 #title {
+    color:  var(--secondary-color);
     margin-top: 0px;
     flex: 0 100%;
     display: block;
@@ -53,13 +58,11 @@ body {
 }
 #title h1{
     margin-top: -3%;
-    color:var(--secondary-color);
     text-decoration: underline;
     font-size:10vh;
 }    
 
 #title h2{
-    color:var(--secondary-color);
     font-size: 5vh;
 }    
 
@@ -93,8 +96,6 @@ header nav {
     height: 100%;
     top: 0;
     left: 0;
-    /* background-image: linear-gradient( rgb(247, 228, 204), rgb(87, 73, 51)); */
-    /* background-image: url("../images/blurry-bg.jpg"); -------BK IMAGE */
     background-size: 100%;
     background-attachment: fixed;
     
@@ -106,7 +107,7 @@ header nav button{
     padding-left: 10%;
     text-align: center;
     margin-left: 1.28%;
-    font-size: 110%;
+    font-size: 2.5vw;
     font-family:SairaCondensed;
     display: inline-block; /*set from flex child to block so margins can be set for spacing*/
     color: rgb(48, 48, 48);
@@ -134,12 +135,12 @@ header nav button:hover{
    border-right: 0px;;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    background-color: snow;
+    background-color: var(--background-color);
     box-shadow: -5px 18px 5px;
   
 }
 .nav-selected:hover{
-    background-color: snow;
+    background-color: var(--background-color);
 }
 
 
@@ -166,28 +167,54 @@ header nav img{
 /* END HEADER/NAV */
 
 
-/*BEGIN ABOUT ME SECTION*/
+/*----------------------------------------------------BEGIN ABOUT ME SECTION*/
 #about{
-    height: 75vh;
+    display:flex;
+    flex-direction: row;
+    height: 100%;
+    min-height: 100vh;
     font-size: 30px;
-    background-color:snow;
+    /* background-color:var(--background-color); */
+    background: var(--background-gradientB);
     padding-bottom: 20px;
     border: 0.2vw solid var(--primary-color);
     text-align: center;
     margin-left:13vw;
    
 }
+.about-flex1 {
+    flex: 1;
+    margin-top: 5%;
+    animation: fadeIn 2s;
+  
+    }
+.prof-pic {
+    animation: growIn 2s;
+    width: 20vw;
+        border-radius: 20vw;
+        border: 2px solid var(--text-color);
+        box-shadow: -10px 10px 8px 3px rgba(79, 78, 91, 0.297);
+    }
+.about-flex2 {
+    animation: inFromRight 2s;
+    margin-top: 5%;
+    margin-right: 10%;
+    flex: 2;
+
+    }
 #about h2{
     animation: fadeIn 2s;
     color:var(--primary-color);
     font-size: 200%;
 }
 
-/*BEGIN WORKS SECTION*/
+
+/*--------------------------------------------------BEGIN WORKS SECTION*/
 #work {
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     color:var(--primary-color);
-    background-color:snow;
+    background: var(--background-gradientB);
     font-size: 30px;
     border: 0.2vw solid var(--primary-color);
     text-align: center;
@@ -210,6 +237,7 @@ header nav img{
 #works{
     display: flex;
     flex-wrap: wrap;
+
 }
 #works:hover{
 
@@ -235,17 +263,18 @@ flex-flow: row wrap;
 .project-card {
 
     min-width: 30%;
-    background-color: aliceblue;
-    /* background-image: url("../../assets/images/CRTImage.jpg"); */
+    min-height: 40vh;
+    /* background-color: aliceblue; */
+    background:var(  --secondary-color);
     background-position:center;
     display: flex;
     flex-direction: column;
     margin: 10px;
     padding: 10px;
     width: 20vw;
-    height: 30vh;
+    height: 100%;
     border: 3px solid var(--primary-color) ;
-    border-radius: 150px;
+    border-radius: 4vw;
     font-size:1.5vw;
     box-shadow: inset;
     animation-name: inFromBelow;
@@ -262,15 +291,17 @@ flex-flow: row wrap;
     box-shadow: -5px 10px 5px rgba(0, 0, 0, 0.5);
 }
 .selected-card {
-    position: static;
+  
+   
     z-index: 11;
  height: 45vh;
-
+    height: 100%;
     transform: scale(1.5);
     box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
 }
 .selected-card:hover {
-    position: static;
+   
+    top:auto;
     z-index: 11;
 
     transform: scale(1.5);
@@ -354,13 +385,67 @@ font-size: xx-large;
     margin-top: auto; 
 }
 
+/*--------------------------------------------------BEGIN RESUME SECTION*/
+#resume {
+    height: 100%;
+    min-height: 80vh;
+    color:var(--primary-color);
+    background: var(--background-gradientB);
+    font-size: 30px;
+    border: 0.2vw solid var(--primary-color);
+    text-align: center;
+    margin-left:13vw;
+}
 
-                            
-/*BEGIN FOOTER SECTION*/
+#resume h2 {
+    font-size: 200%;
+    margin-bottom: 2%;
+    height: auto;
+
+    animation: fadeIn 2s;
+}
+
+#resume ul{
+    font-size: larger;
+    height: 100%;
+    margin: 1% 10%;
+    padding: 3%;
+    border: 6px dotted var(--secondary-color);
+    columns: 2;
+    list-style-type: none;
+}    
+#resume a{
+    font-size: 3vw;
+}   
+#resume h3{
+    font-style: italic;
+}   
+.resume-flex{
+    display: flex;;
+    flex-direction: row;
+}         
+.skill-div{
+    flex: 2;
+  height: 100%;
+}
+.resume-link{
+    flex: 1;
+    align-self: center;
+    transform: scale(1);
+    transition: .5s;
+}
+
+.resume-link:hover{
+    flex: 1;
+    align-self: center;
+  transform: scale(1.2);
+}
+        
+/*--------------------------------------------------BEGIN FOOTER SECTION*/
 #contact {
     height: 75vh;
     color:var(--primary-color);
-    background-color:snow;
+    background: var(--background-gradientB);
     list-style: none;
     font-size: 30px;
     border: 0.2vw solid var(--primary-color);
@@ -371,112 +456,107 @@ font-size: xx-large;
 #contact h2{
     font-size: 200%;
     animation: fadeIn 2s;
-    border-bottom: 8px solid var(--secondary-color);
+}
+.contact-form{
+    animation: inFromBelow 2.5s;
+    display: flex;
+    flex-direction: column;
+    margin: 0 15VW 
+}
+.contact-form label{
+font-size: 3vh;
+margin: 1%;
+}
+#name-box, #email-box{
+    border-color: var(--transparent-color);
+font-size: 3vh;
+box-shadow: -10px 10px 4px rgba(43, 39, 39, 0.363);
+}
+#message-box{
+    border-color: var(--transparent-color);
+    height: 20vh;
+    font-size: 2vh;
+    box-shadow: -10px 10px 4px rgba(43, 39, 39, 0.363);
+}
+#submit-button{
+    align-self: center;
+    margin: 3vh;
+    width:40%;
+    font-size: 3vh;
+    border-radius: 50px;
+    box-shadow: -5px 5px 4px rgba(43, 39, 39, 0.363);
+    transition: .5s;
+}
+
+#submit-button:hover{
+transform: scale(1.2);
+box-shadow: -7px 7px 5px 2px rgba(43, 39, 39, 0.171);
 }
 
 
 
+@media screen and (max-width: 1366px){
 
- /* ----------Media Queries SMALL DESKTOP screens 980px breakpoint---------- */
- @media screen and (max-width: 980px)
- {
-     header, #about, #work, #contact {
-         margin-left: 0px;
-     }
-
-     #about, #work, #contact {
-         
-        scroll-margin-top: 45px;
+    .project-card{
+        min-height: 50vh;
     }
-    #about h2, #work h2, #contact h2 {
-         
-        font-size: 28px;
-    }
-
-     #title{
-        margin-top: 10vh;
-     }
-
-     #profile-pic{
-        order:5;
-        visibility: hidden;
-    }
-
-    #profile-pic-title{
-        padding-top: 1px;
-        visibility: visible;
-        border-radius: 50%;
-        height:20vh;
-    }
-    
-    header nav {
-        display:flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: 100vw;
-        height: 45px;
-    }
-
-    header nav a{
-        flex:1 25%;
-        height: 5vh;
-        width: 21vw;
-        margin-top:5px;
-        font-size: 3vh;
-        margin-left: auto;
-        margin-bottom: auto;
-    }
-
-    #works a{
-        font-size: 20px;
-    }
-    footer h2{
-    margin-bottom: 10px;
-    }
-    footer ul{
-        font-size: 20px;
+    .selected-card{
+        transform:scale(1);
+        height: 100%;
         
     }
 
+}
+ /* ----------Media Queries SMALL DESKTOP screens 980px breakpoint---------- */
+ @media screen and (max-width: 980px)
+ {
+    .project-card {
+        min-width: 50vw;
+        min-height: 20vh;
+        font-size: xx-large;
+    }
+    h4 {
+        font-size: 10px;
+    }
+ 
+    .selected-card {
+        display: block;
+        position:fixed ;
+        
+        top:25vh;
+        width: 50vw;
+        height: 50%;
+    }
+
+    .selected-card > p,
+    .liveLink, 
+   .git-link {
+        display: none;
+    }
+
+    .selected-card >  p,
+    .selected-card > .liveLink, 
+    .selected-card > .git-link {
+        display: block;
+    }
 
  }
 
- /* -----Media Queries TABLET screens----- */
-
-@media screen and (max-width: 768px) {
-    header nav{
-        height:60px;
-    }
-    header nav a{
-        text-align: center;
-        width: 150px;
-        height: 50px;
-        font-size: 30px;
- 
-    }
-
-}
 
 /* -----Media Queries PHONE screens----- */
 @media screen and (max-width: 575px){
-    
-    header nav{
-        height:83px;
-    }
-    header nav a{
 
-       height: 35px;
-       font-size: 24px;
+    header {
+        height: 10vh;
+    }
  
-    }
-    #about, #work, #contact {
-        scroll-margin-top: 83px;
-    }
+
     #title{
-        margin-top: 13vh;
+        margin-top: 1px;
      }
 
     #title h1{
+      
         font-size: 35px;
     }
 
@@ -484,21 +564,11 @@ font-size: xx-large;
         font-size: 20px;
     }
 
-    header nav a{
-        flex:1 50%;
- 
- 
-    }
-    #morcal{
-        height: 200px;
-    }
-    #runbuddy, #breakout{
 
-        height: 150px;
-    }
+
 }
 
-/*ANIMATION SECTION*/
+/*--------------------------------------------------------ANIMATION SECTION*/
 @keyframes fadeIn {
     from{
         
@@ -535,6 +605,14 @@ font-size: xx-large;
     }
 }
 
+@keyframes inFromRight {
+    from{
+        opacity:0;
+        transform: translate(200px,0px);
+        
+    }
+}
+
 @keyframes inFromLeft {
     from{
         opacity:0;
@@ -553,12 +631,9 @@ font-size: xx-large;
 
 @keyframes growIn{
     0% {
+        box-shadow: -15px 15px 20px 22px rgba(79, 78, 91, 0.297);
         opacity: 0;
-        transform: scale(0);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
+        transform: scale(.5);
     }
     
 }
@@ -608,13 +683,13 @@ font-size: xx-large;
     animation: fadeIn 1s;
 }
 .fadeIn-2{
-    animation: fadeIn 1.25s;
+    animation: fadeIn 1.5s;
 }
 .fadeIn-3{
-    animation: fadeIn 1.50s;
+    animation: fadeIn 2s;
 }
 .fadeIn-4{
-    animation: fadeIn 1.75s;
+    animation: fadeIn 2.5s;
 }
 .fadeIn-1{
     animation: fadeIn 2s;

@@ -1,19 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
-    return (
 
+    const [formState, setForm] = useState({ name: '', email: '', message: '' });
+    const [submitted, setSubmitted] = useState(0);
+
+    function handleChange(event) {
+        const set = event.target.name;
+        setForm({ ...formState, [set]: event.target.value });
+    }
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        setForm({ name: '', email: '', message: '' });
+        setSubmitted(1);
+    }
+
+    return (
         <section id="contact">
-             <h2>Contact</h2>
-    <ul class="contact-list">
-        <li>Phone: 
-            <a href="tel:+541-653-3080">541-653-3080</a>
-        </li>
-        <li > 
-            Email: 
-            <a href='mailto:ckurz098@gmail.com'> ckurz098@gmail.com</a>
-        </li>
-    </ul>
+            <h2>Contact</h2>
+            <form className='contact-form' onSubmit={handleSubmit}>
+                <label for="name">Name:</label>
+                <input type={'text'} name='name' id='name-box' value={formState.name} onChange={handleChange} />
+
+                <label for="email">Email:</label>
+                <input  type={'text'}name='email' id='email-box' value={formState.email} onChange={handleChange} />
+
+                <label for="Message">Message:</label>
+                <textarea type={'text'} name='message' id='message-box' value={formState.message} onChange={handleChange} />
+
+                <button id='submit-button'>Submit</button>
+                <p style={{"display": submitted ? "block" : "none"}}>Thankyou!</p>
+            </form>
+
         </section>
     )
 }

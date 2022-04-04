@@ -4,6 +4,7 @@ import './assets/css/style.css';
 import Header from "./components/Header";
 import About from "./components/About";
 import Works from "./components/Works";
+import Resume from "./components/Resume";
 import Contact from "./components/Contact";
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       case 'Contact':
         return (<Contact />)
       case 'Resume':
-        return (<About />)
+        return (<Resume />)
       default:
         break;
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/css/style.css';
 import Footer from "../Footer";
-import portImg from "../../assets/images/profile-pic.jpg"
+
 
 const Nav = ({ view, setView }) => {
 function buttonHandler(event) {
