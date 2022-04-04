@@ -524,15 +524,16 @@ box-shadow: -7px 7px 5px 2px rgba(43, 39, 39, 0.171);
     }
 
 
-    .selected-card > p,
+    .project-card p,
     .liveLink, 
-   .git-link {
+   .img-container {
         display: none;
     }
 
     .selected-card  p,
     .selected-card .liveLink, 
-    .selected-card .git-link {
+    .selected-card .img-container {
+        align-self: center;
         display: block;
     }
 
