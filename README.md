@@ -10,5 +10,5 @@ This portfolio was created using React. It is a Single Page Application that dyn
  
 ##  Installation:
 If you want to check out the code, just download or clone this repository and:
-Use npm install to install needed packages
-Run npm start and wait for the page to automatically open
+- Use npm install to install needed packages
+- Run npm start and wait for the page to automatically open
