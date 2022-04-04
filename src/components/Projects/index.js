@@ -59,16 +59,14 @@ function Projects() {
                     <img className="screenshot" style={{ "display": selected === data.name ? "block" : "none" }} src={require(`../../assets/images/${data.name}.jpg`)} alt={`Screenshot of ${data.name}`}/>
                     <p>{data.description}</p>
                     <p style={{ "display": selected === data.name ? "none" : "block", "margin": "0","fontSize": "16px"}}>Click for more...</p>
-        
-                    <p  className="tech-title" style={{ "display": selected === data.name ? "block" : "none" }}>  
-                    Technologies:
+                <div style={{ "display": selected === data.name ? "block" : "none" }} >
+                    <p  className="tech-title" style={{ "display": selected === data.name ? "block" : "none" }}>   Technologies: </p> 
                     <ul className="columns-list">
                         {data.topics.map((topic) => (
                                 <li key={topic}> {topic} </li>
                         ))}
                         </ul>
-                    </p> 
-                
+                </div>
                     <div className={`liveLinkDiv  ${selected === data.name && "reset"} `} >
                         {data.liveLink && <a className='liveLink' href={data.liveLink} target='__blank'>Live Link</a>}
                     </div>
