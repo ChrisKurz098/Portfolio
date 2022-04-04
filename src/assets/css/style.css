@@ -50,19 +50,22 @@ body {
 
 #title {
     color:  var(--secondary-color);
-    margin-top: 0px;
-    flex: 0 100%;
-    display: block;
+    margin-top: 3vh;
+    flex: 1;
     text-align: center;
     animation: inFromTop 1s;
+    align-items: center;
+    height: 25vh;
 }
 #title h1{
+    align-self: center;
     margin-top: -3%;
     text-decoration: underline;
     font-size:10vh;
 }    
 
 #title h2{
+    align-self: center;
     font-size: 5vh;
 }    
 
@@ -107,7 +110,7 @@ header nav button{
     padding-left: 10%;
     text-align: center;
     margin-left: 1.28%;
-    font-size: 2.5vw;
+    font-size: 2.5vh;
     font-family:SairaCondensed;
     display: inline-block; /*set from flex child to block so margins can be set for spacing*/
     color: rgb(48, 48, 48);
@@ -132,7 +135,8 @@ header nav button:hover{
 .nav-selected {
     margin-left: 1.6%;
     padding-left: 25%;
-   border-right: 0px;;
+   border-right: 0px;
+   font-size: 3vh;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     background-color: var(--background-color);
@@ -186,7 +190,7 @@ header nav img{
     flex: 1;
     margin-top: 5%;
     animation: fadeIn 2s;
-  
+    
     }
 .prof-pic {
     animation: growIn 2s;
@@ -196,14 +200,14 @@ header nav img{
         box-shadow: -10px 10px 8px 3px rgba(79, 78, 91, 0.297);
     }
 .about-flex2 {
-    animation: inFromRight 2s;
+    animation: fadeIn 2s;
     margin-top: 5%;
     margin-right: 10%;
     flex: 2;
 
     }
 #about h2{
-    animation: fadeIn 2s;
+ 
     color:var(--primary-color);
     font-size: 200%;
 }
@@ -388,7 +392,7 @@ font-size: xx-large;
 /*--------------------------------------------------BEGIN RESUME SECTION*/
 #resume {
     height: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     color:var(--primary-color);
     background: var(--background-gradientB);
     font-size: 30px;
@@ -443,7 +447,7 @@ font-size: xx-large;
         
 /*--------------------------------------------------BEGIN FOOTER SECTION*/
 #contact {
-    height: 75vh;
+    height: 100vh;
     color:var(--primary-color);
     background: var(--background-gradientB);
     list-style: none;
@@ -540,6 +544,31 @@ box-shadow: -7px 7px 5px 2px rgba(43, 39, 39, 0.171);
         display: block;
     }
 
+    header nav button{
+        font-size: 2.6vw;
+    }
+.nav-selected{
+    font-size: 3vw;
+}
+    #myLinks{
+        margin-left: 5vw;
+           width: 100vw;
+           margin-top: 8vh;
+           align-items: center;
+       }
+       #myLinks img{
+           border: 2px solid var(--text-color);
+        background: var(--background-color);
+           margin-left: 2vw ;
+           margin-top: 8vh;
+           width: 25%;
+           transform: scale(.9);
+           transition: .5s;
+       }
+       #myLinks img:hover{
+          transform: scale(1.2);
+       }
+
  }
 
 
@@ -547,23 +576,51 @@ box-shadow: -7px 7px 5px 2px rgba(43, 39, 39, 0.171);
 @media screen and (max-width: 575px){
 
     header {
-        height: 10vh;
+        height: 20vh;
     }
- 
-
-    #title{
-        margin-top: 1px;
-     }
-
     #title h1{
-      
-        font-size: 35px;
+        
+        font-size:8vh;
     }
 
     #title h2{
-        font-size: 20px;
+        font-size: 4vh;
+    }
+    .nav-selected{
+        font-size: 2.6vw;
+    }
+    #myLinks{
+     margin-left: 5vw;
+        width: 100vw;
+        align-items: center;
+    }
+    #myLinks img{
+        margin-top: 8vh;
+        width: 150px;
+        transform: scale(.9);
+        transition: .5s;
+    }
+    #myLinks img:hover{
+       transform: scale(1.2);
     }
 
+    .about-flex1 {
+display: none;
+    }
+    .about-flex2 {
+        margin-left: 10%;
+            }
+
+    .resume-flex{
+        flex-direction: column;
+    }
+    #resume a{
+        font-size: 15vw;
+    }
+
+    #resume ul {
+    font-size: 4vw;
+    }
 
 
 }
