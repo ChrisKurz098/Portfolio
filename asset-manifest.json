@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9470d1c7.css",
+    "main.js": "/static/js/main.9f1590bc.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/Plantzzz.jpg": "/static/media/Plantzzz.3ec19b08ce7547f36958.jpg",
+    "static/media/bk.jpg": "/static/media/bk.616e58b733be91da2aa3.jpg",
+    "static/media/EMPL-Tracker.jpg": "/static/media/EMPL-Tracker.86039f232a4041697e41.jpg",
+    "static/media/IMG2ASCII.jpg": "/static/media/IMG2ASCII.9edd7345e8f6f26d3c3f.jpg",
+    "static/media/Weather-Dashborard.jpg": "/static/media/Weather-Dashborard.a31e78d9dd91ac78cc10.jpg",
+    "static/media/TubeSim.jpg": "/static/media/TubeSim.139e2b3c0f3ba1ffa59d.jpg",
+    "static/media/SairaCondensed-Regular.ttf": "/static/media/SairaCondensed-Regular.9e926a7c524c795295e3.ttf",
+    "static/media/linkedInIcon.png": "/static/media/linkedInIcon.a02b9c32850940b06f5b.png",
+    "static/media/Spelling-Bee.jpg": "/static/media/Spelling-Bee.08337ab0b46ef826aa81.jpg",
+    "static/media/profile-pic.jpg": "/static/media/profile-pic.5dbc646b5a0c8a04b652.jpg",
+    "index.html": "/index.html",
+    "main.9470d1c7.css.map": "/static/css/main.9470d1c7.css.map",
+    "main.9f1590bc.js.map": "/static/js/main.9f1590bc.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9470d1c7.css",
+    "static/js/main.9f1590bc.js"
+  ]
+}
