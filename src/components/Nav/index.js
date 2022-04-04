@@ -10,9 +10,9 @@ function buttonHandler(event) {
     return (
             <nav onClick={buttonHandler}>
        
-                <button className={`  fadeIn-1 ${view === "About" && "nav-selected"}`} type='button' name="About" >About Me</button>
+                <button className={`  fadeIn-1 ${view === "About" && "nav-selected"}`}  type='button' name="About" >About Me</button>
 
-                <button className={`fadeIn-2 ${view === "Work" && "nav-selected"}`} type='button' name="Work" >My Work</button>
+                <button className={`fadeIn-2 ${view === "Work" && "nav-selected"}`}   type='button' name="Work" >My Work</button>
 
                 <button className={`fadeIn-3 ${view === "Contact" && "nav-selected"}`} type='button' name="Contact" >Contact</button>
 

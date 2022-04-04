@@ -4,6 +4,7 @@ const Contact = () => {
 
     const [formState, setForm] = useState({ name: '', email: '', message: '' });
     const [submitted, setSubmitted] = useState(0);
+    const [pleaseEnter, setPleaseEnter] = useState(0);
 
     function handleChange(event) {
         const set = event.target.name;
@@ -12,8 +13,14 @@ const Contact = () => {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        setForm({ name: '', email: '', message: '' });
-        setSubmitted(1);
+        const { name, email, message } = formState;
+        if (name && email && message) {
+            setForm({ name: '', email: '', message: '' });
+            setPleaseEnter(0);
+            setSubmitted(1);
+        } else {
+            setPleaseEnter(1);
+        }
     }
 
     return (
@@ -21,16 +28,17 @@ const Contact = () => {
             <h2>Contact</h2>
             <form className='contact-form' onSubmit={handleSubmit}>
                 <label for="name">Name:</label>
-                <input type={'text'} name='name' id='name-box' value={formState.name} onChange={handleChange} />
+                <input type={'text'} name='name' minLength={"8"} id='name-box' value={formState.name} onChange={handleChange} />
 
                 <label for="email">Email:</label>
-                <input  type={'text'}name='email' id='email-box' value={formState.email} onChange={handleChange} />
+                <input type={'email'} name='email' id='email-box' value={formState.email} onChange={handleChange} />
 
                 <label for="Message">Message:</label>
-                <textarea type={'text'} name='message' id='message-box' value={formState.message} onChange={handleChange} />
+                <textarea type={'text'} name='message' id='message-box'value={formState.message} onChange={handleChange} />
 
                 <button id='submit-button'>Submit</button>
-                <p style={{"display": submitted ? "block" : "none"}}>Thankyou!</p>
+                <p className='fadeIn-1' style={{ "display": submitted ? "block" : "none" }}>Thankyou!</p>
+                <p className='fadeIn-1' style={{ "display": pleaseEnter ? "block" : "none" }}>Feild(s) missing</p>
             </form>
 
         </section>
