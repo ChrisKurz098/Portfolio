@@ -472,11 +472,13 @@ font-size: 3vh;
 margin: 1%;
 }
 #name-box, #email-box{
+    padding: 10px;
     border-color: var(--transparent-color);
 font-size: 3vh;
 box-shadow: -10px 10px 4px rgba(43, 39, 39, 0.363);
 }
 #message-box{
+    padding: 10px;
     border-color: var(--transparent-color);
     height: 20vh;
     font-size: 2vh;
