@@ -44,12 +44,13 @@ function Projects() {
         <div className="project-card-container" onClick={clickHandler}>
             <p className="loading-message" style={{ "display": projectData.length ? "none" : "block" }} >Gathering Projects...</p>
 
-            {projectData.map((data) => (
+            {projectData.map((data,i) => (
                 <div key={data.index} id={data.name} className={`project-card ${selected === data.name && "selected-card"}`} style={{
                     animationDuration: `${data.index / 2}s`
                 }}>
-                    <h4>{data.name}</h4>
-
+                    {/* this will use the name formatting placed in the projects array.Easy to make capitals where there are none */}
+                    <h4>{projects[i]}</h4> 
+                    
                     <div className="img-container">
                         <a href={data.gitLink} target='__blank'>
                             <img className="git-link"  src={require('../../assets/images/gitIcon.png')} alt="GitHub Link" />
