@@ -26,9 +26,10 @@ const Contact = () => {
     return (
         <section id="contact">
             <h2>Contact</h2>
+            <a id="emailMe" href="mailto:ckurz098@gmail.com">ckurz098@gmail.com </a>
             <form className='contact-form' onSubmit={handleSubmit}>
                 <label for="name">Name:</label>
-                <input type={'text'} name='name' minLength={"8"} id='name-box' value={formState.name} onChange={handleChange} />
+                <input type={'text'} name='name'  id='name-box' value={formState.name} onChange={handleChange} />
 
                 <label for="email">Email:</label>
                 <input type={'email'} name='email' id='email-box' value={formState.email} onChange={handleChange} />
