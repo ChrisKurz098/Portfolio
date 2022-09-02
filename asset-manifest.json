@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.32844d7a.css",
-    "main.js": "/portfolio/static/js/main.0137373d.js",
+    "main.css": "/portfolio/static/css/main.de6f33c8.css",
+    "main.js": "/portfolio/static/js/main.b9e22ccc.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/Plantzzz.jpg": "/portfolio/static/media/Plantzzz.3ec19b08ce7547f36958.jpg",
     "static/media/bk.jpg": "/portfolio/static/media/bk.616e58b733be91da2aa3.jpg",
@@ -11,15 +11,16 @@
     "static/media/Weather-Dashborard.jpg": "/portfolio/static/media/Weather-Dashborard.a31e78d9dd91ac78cc10.jpg",
     "static/media/TubeSim.jpg": "/portfolio/static/media/TubeSim.139e2b3c0f3ba1ffa59d.jpg",
     "static/media/SairaCondensed-Regular.ttf": "/portfolio/static/media/SairaCondensed-Regular.9e926a7c524c795295e3.ttf",
+    "static/media/racer.jpg": "/portfolio/static/media/racer.458258c66c9cc69ea555.jpg",
     "static/media/linkedInIcon.png": "/portfolio/static/media/linkedInIcon.a02b9c32850940b06f5b.png",
     "static/media/profile-pic.jpg": "/portfolio/static/media/profile-pic.5dbc646b5a0c8a04b652.jpg",
     "index.html": "/portfolio/index.html",
-    "main.32844d7a.css.map": "/portfolio/static/css/main.32844d7a.css.map",
-    "main.0137373d.js.map": "/portfolio/static/js/main.0137373d.js.map",
+    "main.de6f33c8.css.map": "/portfolio/static/css/main.de6f33c8.css.map",
+    "main.b9e22ccc.js.map": "/portfolio/static/js/main.b9e22ccc.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.32844d7a.css",
-    "static/js/main.0137373d.js"
+    "static/css/main.de6f33c8.css",
+    "static/js/main.b9e22ccc.js"
   ]
 }
