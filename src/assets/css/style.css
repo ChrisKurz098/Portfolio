@@ -267,7 +267,7 @@ flex-flow: row wrap;
 .project-card {
 
     min-width: 30%;
-    min-height: 50vh;
+    min-height: 60vh;
     /* background-color: aliceblue; */
     background:var(  --secondary-color);
     background-position:center;
@@ -295,21 +295,17 @@ flex-flow: row wrap;
     box-shadow: -5px 10px 5px rgba(0, 0, 0, 0.5);
 }
 .selected-card {
-  
-   
     z-index: 11;
  height: 45vh;
     height: 100%;
-    transform: scale(1.5);
+    transform: scale(1.1);
     box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
 }
 .selected-card:hover {
-   
     top:auto;
     z-index: 11;
-
-    transform: scale(1.5);
-    box-shadow: -20px 10px 5px rgba(0, 0, 0, 0.5);
+    transform: scale(1.2);
+    box-shadow: -30px 15px 15px rgba(0, 0, 0, 0.5);
 }
 
 .project-card h4{

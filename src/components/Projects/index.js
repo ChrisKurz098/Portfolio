@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 
 function Projects() {
-    const projects = ['Plantzzz', 'NASAteroids', 'TubeSim', 'EMPL-Tracker',  'racer', 'Weather-Dashborard'];
+    const projects = ['Plantzzz', 'NASAteroids', 'TubeSim', 'EMPL-Tracker',  'Racer', 'Weather-Dashborard'];
     const [projectData, setProjectData] = useState([]);
 
     const [selected, setSelected] = useState("");
