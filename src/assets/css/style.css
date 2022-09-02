@@ -467,7 +467,7 @@ font-size: xx-large;
 font-size: 3vh;
 margin: 1%;
 }
-#name-box, #email-box{
+#name-box, #subject-box{
     padding: 10px;
     border-color: var(--transparent-color);
 font-size: 3vh;
