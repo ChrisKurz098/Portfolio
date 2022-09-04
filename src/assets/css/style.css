@@ -503,7 +503,7 @@ box-shadow: -7px 7px 5px 2px rgba(43, 39, 39, 0.171);
         min-height: 60vh;
     }
     .selected-card{
-        transform:scale(1.5);
+       
         height: 100%;
         
     }
@@ -613,7 +613,7 @@ display: none;
     font-size: 4vw;
     }
 
-
+  
 }
 
 /*--------------------------------------------------------ANIMATION SECTION*/

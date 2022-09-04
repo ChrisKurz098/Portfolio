@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 const Footer = () => {
-    return (
+    return  (
         <div id = "myLinks">
             <a href='https://github.com/ChrisKurz098' target="_blank" rel="noreferrer">
                 <img className="fadeIn-1" src={require('../../assets/images/gitIcon.png')} alt="Git Link"/>
