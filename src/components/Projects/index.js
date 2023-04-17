@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+const projects = ['Plantzzz', 'NASAteroids', 'TubeSim', 'EMPL-Tracker',  'Racer', 'Fisher-Price-Record-maker'];
 
 
 function Projects() {
-    const projects = ['Plantzzz', 'NASAteroids', 'TubeSim', 'EMPL-Tracker',  'Racer', 'Fisher-Price-Record-maker'];
+
     const [projectData, setProjectData] = useState([]);
 
     const [selected, setSelected] = useState("");
@@ -34,18 +35,25 @@ function Projects() {
 
     function clickHandler(event) {
         const card = event.target;
-        card.scrollIntoView({ block: "center" });
-        (card.className.includes("selected-card")) ? setSelected("") : setSelected(card.id);
+        
+      
+        (card.className.includes("selected-card")) ? setSelected("") : setSelected(card);
+      
+
     }
 
-
+useEffect(()=> {
+    //Makes sure to scroll based off of modified card element (after rerendering)
+    if (selected !== "") selected.scrollIntoView(false);
+}, [selected])
 
     return (
         <div className="project-card-container" onClick={clickHandler}>
             <p className="loading-message" style={{ "display": projectData.length ? "none" : "block" }} >Gathering Projects...</p>
 
             {projectData.map((data,i) => (
-                <div key={data.index} id={data.name} className={`project-card ${selected === data.name && "selected-card"}`} style={{
+                <div key={data.index} id={data.name} className={`project-card ${selected.id === data.name && "selected-card"}`} style={{
+                    backgroundImage: `require(../../assets/images/${data.name}.jpg)`,
                     animationDuration: `${data.index / 2}s`
                 }}>
                     {/* this will use the name formatting placed in the projects array.Easy to make capitals where there are none */}
@@ -57,11 +65,11 @@ function Projects() {
                         </a>
                     </div>
 
-                    <img className="screenshot" style={{ "display": selected === data.name ? "block" : "none" }} src={require(`../../assets/images/${data.name}.jpg`)} alt={`Screenshot of ${data.name}`}/>
+                    <img className="screenshot" style={{ "display": selected.id === data.name ? "block" : "none" }} src={require(`../../assets/images/${data.name}.jpg`)} alt={`Screenshot of ${data.name}`}/>
                     <p>{data.description}</p>
-                    <p style={{ "display": selected === data.name ? "none" : "block", "margin": "0","fontSize": "16px"}}>Click for more...</p>
-                <div style={{ "display": selected === data.name ? "block" : "none" }} >
-                    <p  className="tech-title" style={{ "display": selected === data.name ? "block" : "none" }}>   Technologies: </p> 
+                    <p style={{ "display": selected.id === data.name ? "none" : "block", "margin": "0","fontSize": "16px"}}>Click for more...</p>
+                <div style={{ "display": selected.id === data.name ? "block" : "none" }} >
+                    <p  className="tech-title" style={{ "display": selected.id === data.name ? "block" : "none" }}>   Technologies: </p> 
                     <ul className="columns-list">
                         {data.topics.map((topic) => (
                                 <li key={topic}> {topic} </li>
