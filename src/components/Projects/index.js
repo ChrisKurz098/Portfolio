@@ -37,10 +37,8 @@ function Projects() {
 
     function clickHandler(event) {
         const card = event.target;
-        
         selectedProject.current = card;
         (card.className.includes("selected-card")) ? setSelected("") : setSelected(card);
-      
 
     }
 
