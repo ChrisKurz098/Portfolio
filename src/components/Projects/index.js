@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 const projects = ['Plantzzz', 'NASAteroids', 'TubeSim', 'EMPL-Tracker',  'Racer', 'Fisher-Price-Record-maker'];
 
 
@@ -7,6 +7,8 @@ function Projects() {
     const [projectData, setProjectData] = useState([]);
 
     const [selected, setSelected] = useState("");
+
+    const selectedProject = useRef(null);
 
     useEffect(() => { getProjects() }, 
     //eslint-disable-next-line
@@ -36,7 +38,7 @@ function Projects() {
     function clickHandler(event) {
         const card = event.target;
         
-      
+        selectedProject.current = card;
         (card.className.includes("selected-card")) ? setSelected("") : setSelected(card);
       
 
@@ -44,7 +46,7 @@ function Projects() {
 
 useEffect(()=> {
     //Makes sure to scroll based off of modified card element (after rerendering)
-    if (selected !== "") selected.scrollIntoView(false);
+    selectedProject.current?.scrollIntoView({behavior: 'smooth'});
 }, [selected])
 
     return (
